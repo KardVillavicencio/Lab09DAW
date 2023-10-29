@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="50222b34-e866-4bca-9d48-22dcc132dfe3">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="48"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select * from cursos]]>
+	</queryString>
+	<field name="codigo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="costo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_ini" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fec_fin" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="duracion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sesiones" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="capacidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="inscritos" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="575" splitType="Stretch">
+			<image vAlign="Bottom">
+				<reportElement mode="Opaque" x="0" y="234" width="85" height="241" backcolor="#000000" uuid="1c4f103c-2764-4a30-a3f9-a7027986c438"/>
+				<imageExpression><![CDATA["silhouette2.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="-20" y="234" width="20" height="241" backcolor="#000000" uuid="f89422cc-3fea-43b5-9c67-459728c1ff75"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666" uuid="26f474ce-1ec4-407f-9ef6-d9e580ba3a3e"/>
+				<textField>
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="b667eee5-4ef3-4cfe-ac8e-3b49021c4037"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="9af3ea0e-e1c4-4ced-bb70-e5cd9f56c370"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF" uuid="bdc564f4-5028-4404-800a-c10d07fe50ea"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="802" height="67" uuid="663b4694-82af-4d80-a310-edf79f6c4f05"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Registro Cursos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="232" y="67" width="568" height="37" uuid="75c4ad8b-10f1-4cd7-8b9d-ee39a603ad23"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Listar Cursos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="22" y="5" width="755" height="20" backcolor="#666666" uuid="fbf7cffb-2322-4499-8e5d-48586d067141"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="43" height="15" uuid="89a08cb9-cccc-4576-be67-3e63d424c43f"/>
+					<text><![CDATA[codigo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="43" y="0" width="136" height="15" uuid="187bc651-6b47-46dd-ae1e-8df4584c9c3c"/>
+					<text><![CDATA[nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="179" y="0" width="59" height="15" uuid="58a88d37-f2ef-40b3-8ee5-7bf74a0b8f2c"/>
+					<text><![CDATA[costo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="238" y="0" width="82" height="15" uuid="51ccf1d0-db50-41e4-b56b-ebc6b7b09c80"/>
+					<text><![CDATA[fec_ini]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="320" y="0" width="85" height="15" uuid="81604fde-f3df-4f25-9193-2772149d6531"/>
+					<text><![CDATA[fec_fin]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="405" y="0" width="70" height="15" uuid="97879fd8-edba-4750-9d9c-435546cbc450"/>
+					<text><![CDATA[duracion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="475" y="0" width="70" height="15" uuid="99ab6be4-388d-4736-9331-18e49a35ea28"/>
+					<text><![CDATA[sesiones]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="545" y="0" width="70" height="15" uuid="f2ce5c32-e194-4d26-92f4-1bbe781c8281"/>
+					<text><![CDATA[capacidad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="615" y="0" width="70" height="15" uuid="e81f24d4-fb32-4fbf-b7e0-1678ecf8b2d1"/>
+					<text><![CDATA[inscritos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="685" y="0" width="70" height="15" uuid="0480ce4f-01bf-45e6-a81d-635214b8ef46"/>
+					<text><![CDATA[estado]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<frame>
+				<reportElement x="22" y="1" width="755" height="25" uuid="55adad01-ae02-4768-b819-7f90130c2613"/>
+				<textField>
+					<reportElement style="Detail" x="43" y="0" width="136" height="25" uuid="5ffab6b6-591a-4503-b50a-3737ce0eab69"/>
+					<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="179" y="0" width="59" height="15" uuid="43419d3a-3291-4093-b7a8-3558de30900f"/>
+					<textFieldExpression><![CDATA[$F{costo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="238" y="1" width="82" height="15" uuid="f29e88fc-efb2-467b-a630-09ff61cd97c3"/>
+					<textFieldExpression><![CDATA[$F{fec_ini}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="320" y="1" width="85" height="15" uuid="7f4e351f-cf8e-4461-877a-56fb7119c8b8"/>
+					<textFieldExpression><![CDATA[$F{fec_fin}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="405" y="0" width="70" height="15" uuid="0a91d4ff-b009-4947-802c-6272c311faa0"/>
+					<textFieldExpression><![CDATA[$F{duracion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="475" y="0" width="70" height="15" uuid="3ab43a03-ac6d-4d08-9dae-abec82f5a461"/>
+					<textFieldExpression><![CDATA[$F{sesiones}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="545" y="0" width="70" height="15" uuid="7eff0266-5c51-4674-bac5-b0d4521320b7"/>
+					<textFieldExpression><![CDATA[$F{capacidad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="685" y="1" width="70" height="15" uuid="f5fb0829-7317-4842-9659-681ae3025f13"/>
+					<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="22" y="16" width="755" height="1" uuid="5b2694a6-cdfb-4011-9200-d00448ffbef0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="22" y="1" width="43" height="15" uuid="d816789b-f48d-4eca-a7db-5c88fa1a4c90"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="637" y="0" width="70" height="15" uuid="da50e020-9792-4bd1-81ea-9f3bd2d6df82"/>
+				<textFieldExpression><![CDATA[$F{inscritos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="646" y="10" width="131" height="29" forecolor="#000000" uuid="79409f16-8489-4f67-9f2d-1b38499b11a2"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="22" y="10" width="341" height="29" uuid="73cf4f29-0d00-48ae-a904-4e54d4b63c16"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Silhouette Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
